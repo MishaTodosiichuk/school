@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('statuses', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->string('title');
-            $table->text('info');
-            $table->integer('count_views')->default(0);
+        Schema::create('images', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('status_id')->nullable();
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('images');
     }
 };

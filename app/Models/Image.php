@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Image extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
         'id',
-        'title',
-        'info',
-        'img',
+        'status_id',
+        'path',
     ];
-    public function images()
+
+    public function status()
     {
-        return $this->hasMany('App\Image');
+        return $this->belongsTo('App\Post');
     }
 }
