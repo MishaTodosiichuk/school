@@ -213,12 +213,13 @@ ul {
     color: #666666;
 }
 
-.admin-write{
+.admin-write a{
     width: 80%;
     margin: 10px;
+    color: black;
 }
 
-.admin-write:hover{
+.admin-write a:hover{
     color: #ef2626;
     transition: color 0.3s ease;
 }
@@ -405,19 +406,14 @@ ul {
 /*contacts*/
 
 .info{
-    line-height: 40px;
+    line-height: 35px;
 }
 
-.contact-form{
-    margin-top: 10px;
+.contact-form input {
+    width: 60%;
 }
-
-.contact-form form{
-    width: 100%;
-}
-
-.contact-info{
-    width: 70%;
+.contact-form textarea {
+    width: 60%;
 }
 
 .contact-btn{
@@ -442,15 +438,6 @@ ul {
     margin-left: 50px;
 }
 
-.image-news{
-    margin-top: 30px;
-}
-
-.image-news img{
-    width: 100%;
-    height: auto;
-}
-
 .photos{
     width: 100%;
     display: flex;
@@ -461,7 +448,6 @@ ul {
 .news-photo{
     margin: 10px;
     width: 22%;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .news-photo img{

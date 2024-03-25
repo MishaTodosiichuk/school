@@ -209,26 +209,13 @@
             <img src="<?php __DIR__ ?>/../img/test.png" alt="">
         </div>
         <div class="admin-name">
-            <b>ПІБ особи</b>
+            <b>Перепелюк Микола Михайлович</b>
         </div>
         <div class="admin-post">
-            Посада
+            Директор
         </div>
-        <div class="admin-write btn btn-warning">
-            Написати звернення <i class="fa-solid fa-envelope"></i>
-        </div>
-        <hr>
-        <div class="admin-img">
-            <img src="<?php __DIR__ ?>/../img/test.png" alt="">
-        </div>
-        <div class="admin-name">
-            <b>ПІБ особи</b>
-        </div>
-        <div class="admin-post">
-            Посада
-        </div>
-        <div class="admin-write btn btn-warning">
-            Написати звернення <i class="fa-solid fa-envelope"></i>
+        <div class="admin-write btn btn-warning mt-2">
+            <a href="{{route('pages.contacts')}}">Написати звернення <i class="fa-solid fa-envelope"></i></a>
         </div>
     </div>
     <hr>

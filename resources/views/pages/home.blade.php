@@ -31,46 +31,27 @@
         <hr>
         <div class="news">
             <div class="news-content">
-                <div class="news-img">
-                    <a href="{{route('pages.news')}}"><img src="../img/news/news.jpeg" alt="Заголовок"></a>
-                </div>
+                @foreach($news as $data)
                 <div class="news-text">
                     <div class="news-title">
-                        <b>Заголовок</b>
+                        <a href="{{route('news.show', $data->id)}}"><b>{{$data->title}}</b></a>
                     </div>
-                    <p>Опис новини</p>
+                    <p>{{$data->info}}</p>
                     <div class="news-date">
-                        <p><i>Дата та час викладання</i></p>
+                        <p><i>{{$data->updated_at}}</i></p>
+                    </div>
+                    <div class="mt-2">
+                        {{--            @if(auth()->user()->can('add delete'))--}}
+                        <form action="{{route('news.destroy', $data->id)}}" method="post" style="display:inline-block">
+                            @csrf
+                            @method ('DELETE')
+                            <button type="submit" class="btn btn-danger">Видалити</button>
+                        </form>
+                        {{--            @endif--}}
+                        <a href="{{route('news.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
                     </div>
                 </div>
-
-            </div>
-            <hr>
-            <div class="news-content">
-                <div class="news-img">
-                    <img src="../img/news/news.jpeg" alt="Заголовок">
-                </div>
-                <div class="news-text">
-                    <div class="news-title">
-                        <b>Заголовок</b>
-                    </div>
-                    <p>Опис новини</p>
-                    <div class="news-date">
-                        <p><i>Дата та час викладання</i></p>
-                    </div>
-                </div>
-                <div class="news-img">
-                    <img src="../img/news/news.jpeg" alt="Заголовок">
-                </div>
-                <div class="news-text">
-                    <div class="news-title">
-                        <b>Заголовок</b>
-                    </div>
-                    <p>Опис новини</p>
-                    <div class="news-date">
-                        <p><i>Дата та час викладання</i></p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <hr>
         </div>

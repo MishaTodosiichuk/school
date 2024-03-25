@@ -2,7 +2,6 @@
 
 @section('title')Статус закладу@endsection
 @section('content')
-    @include('inc.list-block-filter')
     <a href="{{route('status.create')}}" class="btn btn-success mt-2">Додати новий пост</a>
     @if (session ('status'))
         <div class="alert alert-success mt-2">

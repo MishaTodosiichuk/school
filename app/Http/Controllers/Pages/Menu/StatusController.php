@@ -107,12 +107,13 @@ class StatusController extends Controller
     public function destroy(Status $status)
     {
         $status->delete();
-        $images = Image::where('status_id',$status->id)->get();
+        $status_id = $status->id;
+        $images = Image::where('status_id',$status_id)->get();
         foreach ($images as $image){
             $image->delete();
         }
 
-        Storage::disk('public')->deleteDirectory('status/' . $status->id);
+        Storage::disk('public')->deleteDirectory('status/' . $status_id);
         return redirect()->back()->with('status','Пост успішно видалено!');
     }
 }

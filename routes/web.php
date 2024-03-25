@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Pages\Menu\StatusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -22,7 +23,10 @@ Route::get('/photogallery', 'App\Http\Controllers\Pages\PhotogalleryController')
 
 Route::get('/contacts', 'App\Http\Controllers\Pages\ContactsController')->name('pages.contacts');
 
-Route::get('/news', 'App\Http\Controllers\Pages\NewsController')->name('pages.news');
+Route::get('/send', 'App\Http\Controllers\Pages\MailController@send')->name('send');
+
+
+Route::resource('/news', NewsController::class);
 
 Route::resource('/status', StatusController::class);
 
