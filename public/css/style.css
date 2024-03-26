@@ -388,14 +388,14 @@ ul {
 }
 
 .photo {
-    margin-top: 60px;
-    width: 30%;
-    min-height: 140px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    width: 25%;
+    max-height: 100px;
 }
 
 .photo img{
-    width: 100%;
+    width: 50%;
+
 }
 
 .photo .title{

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Pages\Menu\StatusController;
+use App\Http\Controllers\Pages\PhotogalleryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\Pages\HomeController')->name('pages.home');
+Route::get('/', 'App\Http\Controllers\Pages\HomeController')->name('pages.news.index');
 
-Route::get('/photogallery', 'App\Http\Controllers\Pages\PhotogalleryController')->name('pages.photogallery');
+Route::resource('/photogallery', PhotogalleryController::class);
 
 Route::get('/contacts', 'App\Http\Controllers\Pages\ContactsController')->name('pages.contacts');
 
@@ -36,9 +37,9 @@ Route::get('/ustanovchi-dokumenti', 'App\Http\Controllers\Pages\Menu\UstanovchiD
 
 Route::get('/normativni-dokumenti', 'App\Http\Controllers\Pages\Menu\NormativniDokumentiController')->name('pages.menu.normativni-dock');
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

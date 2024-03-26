@@ -16,7 +16,7 @@ class NewsController extends Controller
     {
         $news = News::orderByDesc('id')->paginate(10);
 
-        return view('pages.news.index', compact (['news']));
+        return view('pages.news.home', compact (['news']));
     }
 
     /**

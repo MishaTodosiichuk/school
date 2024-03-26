@@ -13,7 +13,7 @@
                     <a class="nav-link" href="/">Головна</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('pages.photogallery')}}">Фотогалерея</a>
+                    <a class="nav-link" href="{{route('photogallery.index')}}">Фотогалерея</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('pages.contacts')}}">Контанти</a>

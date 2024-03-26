@@ -29,6 +29,21 @@
             <b>Новини нашої школи:</b>
         </div>
         <hr>
+        <a href="{{route('news.create')}}" class="btn btn-success mt-2">Додати нову новину</a>
+        @if (session ('status'))
+            <div class="alert alert-success mt-2">
+                {{session ('status')}}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger mt-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="news">
             <div class="news-content">
                 @foreach($news as $data)
