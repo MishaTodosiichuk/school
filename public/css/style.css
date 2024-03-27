@@ -404,6 +404,13 @@ ul {
 }
 
 /*contacts*/
+.form{
+    width: 100%;
+}
+
+.form input{
+    width: 100%;
+}
 
 .info{
     line-height: 35px;

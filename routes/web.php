@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Pages\ContactController;
 use App\Http\Controllers\Pages\Menu\StatusController;
 use App\Http\Controllers\Pages\PhotogalleryController;
 use App\Http\Controllers\ProfileController;
@@ -22,7 +23,7 @@ Route::get('/', 'App\Http\Controllers\Pages\HomeController')->name('pages.news.i
 
 Route::resource('/photogallery', PhotogalleryController::class);
 
-Route::get('/contacts', 'App\Http\Controllers\Pages\ContactsController')->name('pages.contacts');
+Route::resource('/contacts', ContactController::class);
 
 Route::get('/send', 'App\Http\Controllers\Pages\MailController@send')->name('send');
 
@@ -30,12 +31,6 @@ Route::get('/send', 'App\Http\Controllers\Pages\MailController@send')->name('sen
 Route::resource('/news', NewsController::class);
 
 Route::resource('/status', StatusController::class);
-
-Route::get('/licenziya-na-provadzhennya-osvitnoi-diyalnosti', 'App\Http\Controllers\Pages\Menu\LicenziyaNaProvadzhennyaOsvitnoiDiyalnostiController')->name('pages.menu.licenziya_na_prov');
-
-Route::get('/ustanovchi-dokumenti', 'App\Http\Controllers\Pages\Menu\UstanovchiDokumentiController')->name('pages.menu.ustanovchi_dock');
-
-Route::get('/normativni-dokumenti', 'App\Http\Controllers\Pages\Menu\NormativniDokumentiController')->name('pages.menu.normativni-dock');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');

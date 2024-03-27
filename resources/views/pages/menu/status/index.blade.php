@@ -2,7 +2,15 @@
 
 @section('title')Статус закладу@endsection
 @section('content')
-    <a href="{{route('status.create')}}" class="btn btn-success mt-2">Додати новий пост</a>
+<h1>Статус закладу</h1>
+    <div class="hr">
+        <div class="orange-hr"></div>
+        <div class="silver-hr"></div>
+    </div>
+    <br>
+{{--    @if(auth()->user() && auth()->user()->can('admin'))--}}
+        <a href="{{route('status.create')}}" class="btn btn-success mt-2">Додати новий пост</a>
+{{--    @endif--}}
     @if (session ('status'))
         <div class="alert alert-success mt-2">
             {{session ('status')}}
@@ -31,14 +39,14 @@
                 </div>
             </div>
             <div class="mt-2">
-    {{--            @if(auth()->user()->can('add delete'))--}}
+{{--                @if(auth()->user() && auth()->user()->can('admin'))--}}
                     <form action="{{route('status.destroy', $data->id)}}" method="post" style="display:inline-block">
                         @csrf
                         @method ('DELETE')
                         <button type="submit" class="btn btn-danger">Видалити</button>
                     </form>
-    {{--            @endif--}}
                 <a href="{{route('status.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
+{{--                @endif--}}
             </div>
         </div>
         <hr>

@@ -6,197 +6,197 @@
                     <a href="{{route('status.index')}}">Статут закладу</a>
                 </li>
                 <li>
-                    <a href="{{route('pages.menu.licenziya_na_prov')}}">Ліцензія на провадження освітньої діяльності</a>
+                    <a href="{{route('status.index')}}">Ліцензія на провадження освітньої діяльності</a>
                 </li>
                 <li>
-                    <a href="{{route('pages.menu.ustanovchi_dock')}}">Установчі документи</a>
+                    <a href="{{route('status.index')}}">Установчі документи</a>
                 </li>
                 <li>
-                    <a href="{{route('pages.menu.normativni-dock')}}">Нормативні документи</a>
+                    <a href="{{route('status.index')}}">Нормативні документи</a>
                 </li>
                 <li>
-                    <a href="#">Державні закупівлі</a>
+                    <a href="{{route('status.index')}}">Державні закупівлі</a>
                 </li>
                 <li>
-                    <a href="#">Територія обслуговування</a>
+                    <a href="{{route('status.index')}}">Територія обслуговування</a>
                 </li>
                 <li>
-                    <a href="#">Атестація навчального закладу</a>
+                    <a href="{{route('status.index')}}">Атестація навчального закладу</a>
                 </li>
                 <li>
-                    <a href="#">Ліцензований обсяг здобувачів освіти</a>
+                    <a href="{{route('status.index')}}">Ліцензований обсяг здобувачів освіти</a>
                 </li>
                 <li>
-                    <a href="#">Мова освітнього процесу</a>
+                    <a href="{{route('status.index')}}">Мова освітнього процесу</a>
                 </li>
                 <li>
-                    <a href="#">Матеріально-технічне забезпечення</a>
+                    <a href="{{route('status.index')}}">Матеріально-технічне забезпечення</a>
                 </li>
                 <li>
-                    <a href="#">Кошторис і фінансова звітність</a>
+                    <a href="{{route('status.index')}}">Кошторис і фінансова звітність</a>
                 </li>
                 <li>
-                    <a href="#">Стратегія розвитку закладу</a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-list"><a href="#">Виховна робота</a>
-            <ul class="menu-drop">
-                <li>
-                    <a href="#">Національно-патріотичне виховання</a>
-                </li>
-                <li>
-                    <a href="#">Здоровий спосіб життя</a>
-                </li>
-                <li>
-                    <a href="#">Безпека життєдіяльності</a>
-                </li>
-                <li>
-                    <a href="#">Безпека дорожнього руху</a>
-                </li>
-                <li>
-                    <a href="#">Виховні заходи 2023-2024</a>
-                </li>
-                <li>
-                    <a href="#">Виховні заходи 2022-2023</a>
-                </li>
-                <li>
-                    <a href="#">Акції</a>
-                </li>
-                <li>
-                    <a href="#">16 днів проти насильства</a>
-                </li>
-                <li>
-                    <a href="#">Конкурси</a>
-                </li>
-                <li>
-                    <a href="#">Предметні тижні</a>
-                </li>
-                <li>
-                    <a href="#">Екскурсії</a>
+                    <a href="{{route('status.index')}}">Стратегія розвитку закладу</a>
                 </li>
             </ul>
         </li>
-        <li class="menu-list"><a href="#">Освітнє середовище закладу</a>
+        <li class="menu-list"><a href="{{route('status.index')}}">Виховна робота</a>
             <ul class="menu-drop">
                 <li>
-                    <a href="#">Бібліотека</a>
+                    <a href="{{route('status.index')}}">Національно-патріотичне виховання</a>
                 </li>
                 <li>
-                    <a href="#">Правила поведінки</a>
+                    <a href="{{route('status.index')}}">Здоровий спосіб життя</a>
                 </li>
                 <li>
-                    <a href="#">Безпечне освітнє середовище</a>
+                    <a href="{{route('status.index')}}">Безпека життєдіяльності</a>
                 </li>
                 <li>
-                    <a href="#">Протидія булінгу</a>
+                    <a href="{{route('status.index')}}">Безпека дорожнього руху</a>
                 </li>
                 <li>
-                    <a href="#">Команда супроводу учнів схильних до порушень поведіники</a>
+                    <a href="{{route('status.index')}}">Виховні заходи 2023-2024</a>
                 </li>
                 <li>
-                    <a href="#">Інклюзивний простір</a>
+                    <a href="{{route('status.index')}}">Виховні заходи 2022-2023</a>
                 </li>
                 <li>
-                    <a href="#">Організація харчування</a>
+                    <a href="{{route('status.index')}}">Акції</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">16 днів проти насильства</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Конкурси</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Предметні тижні</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Екскурсії</a>
                 </li>
             </ul>
         </li>
-        <li class="menu-list"><a href="#">Клас безпеки</a>
+        <li class="menu-list"><a href="{{route('status.index')}}">Освітнє середовище закладу</a>
             <ul class="menu-drop">
                 <li>
-                    <a href="#">Зона пожежної безпеки</a>
+                    <a href="{{route('status.index')}}">Бібліотека</a>
                 </li>
                 <li>
-                    <a href="#">Зона мінної безпеки</a>
+                    <a href="{{route('status.index')}}">Правила поведінки</a>
                 </li>
                 <li>
-                    <a href="#">Зона безпеки життєдіяльності</a>
+                    <a href="{{route('status.index')}}">Безпечне освітнє середовище</a>
                 </li>
                 <li>
-                    <a href="#">Зона домедичної допомоги</a>
+                    <a href="{{route('status.index')}}">Протидія булінгу</a>
                 </li>
                 <li>
-                    <a href="#">Зона психологічного розвантаження</a>
+                    <a href="{{route('status.index')}}">Команда супроводу учнів схильних до порушень поведіники</a>
                 </li>
                 <li>
-                    <a href="#">Ігрова зона</a>
+                    <a href="{{route('status.index')}}">Інклюзивний простір</a>
                 </li>
                 <li>
-                    <a href="#">Зона перегляду відеоуроків та презентацій</a>
+                    <a href="{{route('status.index')}}">Організація харчування</a>
                 </li>
             </ul>
         </li>
-        <li class="menu-list"><a href="#">Освітній процес</a>
+        <li class="menu-list"><a href="{{route('status.index')}}">Клас безпеки</a>
             <ul class="menu-drop">
                 <li>
-                    <a href="#">Розклад уроків</a>
+                    <a href="{{route('status.index')}}">Зона пожежної безпеки</a>
                 </li>
                 <li>
-                    <a href="#">Розпорядок дня</a>
+                    <a href="{{route('status.index')}}">Зона мінної безпеки</a>
                 </li>
                 <li>
-                    <a href="#">Готуємося до НМТ</a>
+                    <a href="{{route('status.index')}}">Зона безпеки життєдіяльності</a>
                 </li>
                 <li>
-                    <a href="#">Дистанційне навчання</a>
+                    <a href="{{route('status.index')}}">Зона домедичної допомоги</a>
                 </li>
                 <li>
-                    <a href="#">Конкурси</a>
+                    <a href="{{route('status.index')}}">Зона психологічного розвантаження</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Ігрова зона</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Зона перегляду відеоуроків та презентацій</a>
                 </li>
             </ul>
         </li>
-        <li class="menu-list"><a href="#">Наш заклад</a>
+        <li class="menu-list"><a href="{{route('status.index')}}">Освітній процес</a>
             <ul class="menu-drop">
                 <li>
-                    <a href="#">Історія</a>
+                    <a href="{{route('status.index')}}">Розклад уроків</a>
                 </li>
                 <li>
-                    <a href="#">Адміністрація</a>
+                    <a href="{{route('status.index')}}">Розпорядок дня</a>
                 </li>
                 <li>
-                    <a href="#">Структура та органи управління закладом</a>
+                    <a href="{{route('status.index')}}">Готуємося до НМТ</a>
                 </li>
                 <li>
-                    <a href="#">Педагогічний колектив</a>
+                    <a href="{{route('status.index')}}">Дистанційне навчання</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Конкурси</a>
                 </li>
             </ul>
         </li>
-        <li class="menu-list"><a href="#">Система оцінюювання здобувачів освіти</a>
+        <li class="menu-list"><a href="{{route('status.index')}}">Наш заклад</a>
             <ul class="menu-drop">
                 <li>
-                    <a href="#">Моніторинг освітнього процесу</a>
+                    <a href="{{route('status.index')}}">Історія</a>
                 </li>
                 <li>
-                    <a href="#">Внутрішня система забезпечення якості освіти</a>
+                    <a href="{{route('status.index')}}">Адміністрація</a>
                 </li>
                 <li>
-                    <a href="#">Критерії оцінювання навчальних досягнень</a>
+                    <a href="{{route('status.index')}}">Структура та органи управління закладом</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Педагогічний колектив</a>
                 </li>
             </ul>
         </li>
-        <li class="menu-list"><a href="#">Управлінські процеси</a>
+        <li class="menu-list"><a href="{{route('status.index')}}">Система оцінюювання здобувачів освіти</a>
             <ul class="menu-drop">
                 <li>
-                    <a href="#">План роботи закладу</a>
+                    <a href="{{route('status.index')}}">Моніторинг освітнього процесу</a>
                 </li>
                 <li>
-                    <a href="#">Освітні програми</a>
+                    <a href="{{route('status.index')}}">Внутрішня система забезпечення якості освіти</a>
                 </li>
                 <li>
-                    <a href="#">Атестація педагогічних працівників</a>
+                    <a href="{{route('status.index')}}">Критерії оцінювання навчальних досягнень</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-list"><a href="{{route('status.index')}}">Управлінські процеси</a>
+            <ul class="menu-drop">
+                <li>
+                    <a href="{{route('status.index')}}">План роботи закладу</a>
                 </li>
                 <li>
-                    <a href="#">Академічна доброчесність</a>
+                    <a href="{{route('status.index')}}">Освітні програми</a>
                 </li>
                 <li>
-                    <a href="#">Набір у 1 клас</a>
+                    <a href="{{route('status.index')}}">Атестація педагогічних працівників</a>
                 </li>
                 <li>
-                    <a href="#">Наявність вакантних посад</a>
+                    <a href="{{route('status.index')}}">Академічна доброчесність</a>
                 </li>
                 <li>
-                    <a href="#">Річний звіт</a>
+                    <a href="{{route('status.index')}}">Набір у 1 клас</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Наявність вакантних посад</a>
+                </li>
+                <li>
+                    <a href="{{route('status.index')}}">Річний звіт</a>
                 </li>
             </ul>
         </li>
@@ -215,7 +215,7 @@
             Директор
         </div>
         <div class="admin-write btn btn-warning mt-2">
-            <a href="{{route('pages.contacts')}}">Написати звернення <i class="fa-solid fa-envelope"></i></a>
+            <a href="{{route('contacts.index')}}">Написати звернення <i class="fa-solid fa-envelope"></i></a>
         </div>
     </div>
     <hr>
