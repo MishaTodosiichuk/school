@@ -1,12 +1,6 @@
 @extends('layouts.default')
 
 @section('content')
-    <style>
-        .form{
-            width: 100%;
-        }
-
-    </style>
     <a href="{{route('news.index')}}" class="btn btn-warning mb-2">Назад</a>
     @if (session ('status'))
         <div class="alert alert-success">

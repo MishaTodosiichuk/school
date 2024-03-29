@@ -23,16 +23,16 @@
                     </ul>
                 </div>
             @endif
-            @foreach($info as $data)
+            @foreach($info as $contact)
             <ul>
-                <li><b>Код ЄДРПОУ: </b>{{$data->code}}</li>
-                <li><b>Телефон: </b>{{$data->phone}}</li>
-                <li><b>Адреса: </b>{{$data->address}}</li>
-                <li><b>Графік роботи: </b>{{$data->schedule}}</li>
-                <li><b>E-Mail адреса: </b>{{$data->email}}</li>
-                <li><b>Контактні телефони: </b>{{$data->contact_phone}}</li>
-                <li><b>Керівник установи: </b>{{$data->manager}}</li>
-            </ul><a href="{{route('contacts.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
+                <li><b>Код ЄДРПОУ: </b>{{$contact->code}}</li>
+                <li><b>Телефон: </b>{{$contact->phone}}</li>
+                <li><b>Адреса: </b>{{$contact->address}}</li>
+                <li><b>Графік роботи: </b>{{$contact->schedule}}</li>
+                <li><b>E-Mail адреса: </b>{{$contact->email}}</li>
+                <li><b>Контактні телефони: </b>{{$contact->contact_phone}}</li>
+                <li><b>Керівник установи: </b>{{$contact->manager}}</li>
+            </ul><a href="{{route('contacts.edit', $contact->id)}}" class="btn btn-primary">Змінити</a>
             @endforeach
         </div>
         <hr>

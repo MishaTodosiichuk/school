@@ -1,12 +1,6 @@
 @extends('layouts.default')
 
 @section('content')
-    <style>
-        .form{
-            width: 100%;
-        }
-
-    </style>
     <a href="{{route('status.index')}}" class="btn btn-warning mb-2">Назад</a>
     @if (session ('status'))
         <div class="alert alert-success">
@@ -34,7 +28,7 @@
             <input type="text" class="form-control" name="info">
         </div>
         <div class="mb-3">
-            <input class="form-control" type="file" name="image[]" multiple style="width: 100%;">
+            <input class="form-control" type="file" name="image[]" multiple>
         </div>
         <button type="submit" class="btn btn-success">Створити</button>
     </form>
