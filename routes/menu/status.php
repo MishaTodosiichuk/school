@@ -1,22 +1,10 @@
 <?php
 
+use App\Http\Controllers\Pages\Menu\Status\StatusController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['namespace' => 'App\Http\Controllers\Pages\Menu\Status', 'prefix' => 'status'], function ()  {
-    Route::get('/', 'IndexController')->name('status.index');
+Route::resource('/status', StatusController::class)->only(['create', 'store', 'edit', 'update', 'destroy'])->middleware('auth');
 
-    Route::get('/{status}', 'ShowController')->name('status.show');
+Route::get('/status', [StatusController::class, 'index'])->name('status.index');
 
-    Route::middleware(['auth'])->group(function ()  {
-        Route::get('/create', 'CreateController')->name('status.create');
-
-        Route::post('/', 'StoreController')->name('status.store');
-
-        Route::get('/{status}/edit', 'EditController')->name('status.edit');
-
-        Route::put('/{status}', 'UpdateController')->name('status.update');
-
-        Route::delete('/{status}', 'DestroyController')->name('status.destroy');
-    });
-});
-
+Route::get('/status/{status}', [StatusController::class, 'show'])->name('status.show');

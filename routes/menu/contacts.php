@@ -1,13 +1,10 @@
 <?php
 
+use App\Http\Controllers\Pages\Menu\Contacts\ContactsController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['namespace' => 'App\Http\Controllers\Pages\Menu\Contacts', 'prefix' => 'contacts'], function ()  {
-    Route::get('/', 'IndexController')->name('contacts.index');
+Route::resource('/contacts', ContactsController::class)->only(['edit', 'update'])->middleware('auth');
 
-    Route::middleware(['auth'])->group(function ()  {
-        Route::get('/{contact}/edit', 'EditController')->name('contacts.edit');
+Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts.index');
 
-        Route::put('/{contact}', 'UpdateController')->name('contacts.update');
-    });
-});
+

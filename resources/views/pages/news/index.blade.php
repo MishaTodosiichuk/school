@@ -29,7 +29,9 @@
             <b>Новини нашої школи:</b>
         </div>
         <hr>
-        <a href="{{route('news.create')}}" class="btn btn-success mt-2">Додати нову новину</a>
+        @if(auth()->user() && auth()->user()->can('admin'))
+            <a href="{{route('news.create')}}" class="btn btn-success mt-2">Додати нову новину</a>
+        @endif
         @if (session ('status'))
             <div class="alert alert-success mt-2">
                 {{session ('status')}}
@@ -55,16 +57,16 @@
                     <div class="news-date">
                         <p><i>{{$data->updated_at}}</i></p>
                     </div>
+                    @if(auth()->user() && auth()->user()->can('admin'))
                     <div class="mt-2">
-                        {{--            @if(auth()->user()->can('add delete'))--}}
                         <form action="{{route('news.destroy', $data->id)}}" method="post" style="display:inline-block">
                             @csrf
                             @method ('DELETE')
                             <button type="submit" class="btn btn-danger">Видалити</button>
                         </form>
-                        {{--            @endif--}}
                         <a href="{{route('news.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
                     </div>
+                    @endif
                 </div>
                 @endforeach
             </div>

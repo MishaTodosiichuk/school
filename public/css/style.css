@@ -384,18 +384,17 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: -40px;
 }
 
 .photo {
     margin-top: 20px;
-    width: 25%;
-    max-height: 100px;
+    width: 24%;
+    min-height: 100px;
 }
 
 .photo img{
-    width: 50%;
-
+    height: 170px;
+    width: 180px;
 }
 
 .photo .title{

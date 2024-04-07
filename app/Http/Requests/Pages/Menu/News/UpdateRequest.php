@@ -26,4 +26,13 @@ class UpdateRequest extends FormRequest
             'info' => ['required'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Це поле обовʼязкове для заповнення',
+            'title.max:255' => 'Це поле може містити до 255 символів',
+            'info.required' => 'Це поле обовʼязкове для заповнення',
+        ];
+    }
 }

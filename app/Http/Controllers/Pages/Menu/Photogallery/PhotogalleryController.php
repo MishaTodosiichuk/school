@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Pages;
+namespace App\Http\Controllers\Pages\Menu\Photogallery;
 
-use App\Http\Controllers\Controller;
+use App\Http\Requests\Pages\Menu\Photogallery\UpdateRequest;
 use App\Models\Photogallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class PhotogalleryController extends Controller
+class PhotogalleryController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -30,20 +30,13 @@ class PhotogalleryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UpdateRequest $request)
     {
         $images = $request->file('image');
 
-        if ($request->hasFile('image')) {
-            foreach ($images as $image) {
-                $path = $image->storeAs('photogallery/', $image->getClientOriginalName(), 'public');
-                Photogallery::create([
-                    'path' => $path
-                ]);
-            }
-        }
+        $this->service->store($images);
 
-        return redirect()->back()->with('status','Нове фото додано!');
+        return redirect()->back()->with('status','Дані додано!');
     }
 
     /**

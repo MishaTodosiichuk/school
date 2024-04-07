@@ -8,23 +8,15 @@
         <div class="silver-hr"></div>
     </div>
     <br>
-{{--    @if(auth()->user() && auth()->user()->can('admin'))--}}
+    @if(auth()->user() && auth()->user()->can('admin'))
         <a href="{{route('status.create')}}" class="btn btn-success mt-2">Додати новий пост</a>
-{{--    @endif--}}
+    @endif
     @if (session ('status'))
         <div class="alert alert-success mt-2">
             {{session ('status')}}
         </div>
     @endif
-    @if ($errors->any())
-        <div class="alert alert-danger mt-4">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
     @foreach($status as $data)
         <div class="list">
             <div class="list-content">
@@ -38,16 +30,16 @@
                     </div>
                 </div>
             </div>
+            @if(auth()->user() && auth()->user()->can('admin'))
             <div class="mt-2">
-{{--                @if(auth()->user() && auth()->user()->can('admin'))--}}
-                    <form action="{{route('status.destroy', $data->id)}}" method="post" style="display:inline-block">
-                        @csrf
-                        @method ('DELETE')
-                        <button type="submit" class="btn btn-danger">Видалити</button>
-                    </form>
+                <form action="{{route('status.destroy', $data->id)}}" method="post" style="display:inline-block">
+                    @csrf
+                    @method ('DELETE')
+                    <button type="submit" class="btn btn-danger">Видалити</button>
+                </form>
                 <a href="{{route('status.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
-{{--                @endif--}}
             </div>
+            @endif
         </div>
         <hr>
     @endforeach

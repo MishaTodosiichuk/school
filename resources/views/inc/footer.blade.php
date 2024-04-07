@@ -6,11 +6,10 @@
             <a href="https://www.youtube.com/@user-ne3gg8we3m"><i class="fa-brands fa-youtube"></i></a>
         </div>
         <div class="title-footer">
-            Васловівський ЗЗСО - 2024 ©</p>
+            <p>Васловівський ЗЗСО - {{ (date('Y') == 2024) ? date('Y') : '2024-'.date('Y')}} ©</p>
         </div>
         <div class="author">
-            Розробник
-            <!--<a href="https://t.me/MishaTodosiichuk">Розробник <i class="fa-brands fa-telegram"></i></a>-->
+            <a href="https://t.me/MishaTodosiichuk">Розробник <i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
 </div>

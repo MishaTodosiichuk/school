@@ -32,7 +32,10 @@
                 <li><b>E-Mail адреса: </b>{{$contact->email}}</li>
                 <li><b>Контактні телефони: </b>{{$contact->contact_phone}}</li>
                 <li><b>Керівник установи: </b>{{$contact->manager}}</li>
-            </ul><a href="{{route('contacts.edit', $contact->id)}}" class="btn btn-primary">Змінити</a>
+            </ul>
+                    @if(auth()->user() && auth()->user()->can('admin'))
+                        <a href="{{route('contacts.edit', $contact->id)}}" class="btn btn-primary">Змінити</a>
+                    @endif
             @endforeach
         </div>
         <hr>
