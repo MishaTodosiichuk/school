@@ -26,7 +26,7 @@
     <div class="photogallery">
         @foreach($photos as $data)
         <div class="photo">
-            <img src="../storage/{{$data->path}}" alt="">
+            <img src="{{url('storage/' . $data->path) }}" alt="{{$data->path}}">
             @if(auth()->user() && auth()->user()->can('admin'))
             <div class="mt-2">
                 <form action="{{route('photogallery.destroy', $data->id)}}" method="post" style="display:inline-block">

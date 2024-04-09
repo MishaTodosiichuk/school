@@ -30,11 +30,6 @@
         </div>
         <div class="mb-3">
             <input class="form-control" type="file" name="image[]" multiple>
-            @error('image')
-            <div class="alert alert-danger mt-4">
-                {{ $message }}
-            </div>
-            @enderror
         </div>
         <button type="submit" class="btn btn-success">Створити</button>
     </form>

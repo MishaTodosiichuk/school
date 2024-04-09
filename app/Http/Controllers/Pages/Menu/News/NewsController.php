@@ -35,6 +35,7 @@ class NewsController extends BaseController
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
+
         $this->service->store($data);
 
         return redirect()->back()->with('status','Нову новину додано!');

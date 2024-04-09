@@ -10,15 +10,12 @@ use function Laravel\Prompts\alert;
 
 class PhotogalleryService
 {
-    public function store($images)
+    public function store($data)
     {
         try {
             DB::beginTransaction();
-            if (isset($images))
-            foreach ($images as $image) {
-                $image['path'] = Storage::put('/images', $image['path']);
-                Photogallery::query()->create();
-            }
+            $data['path'] = Storage::disk('public')->put('/images/photogallery', $data['path']);
+            Photogallery::query()->create($data);
             DB::commit();
         } catch (Exception $exception) {
             DB::rollBack();

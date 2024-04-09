@@ -415,7 +415,7 @@ ul {
     line-height: 35px;
 }
 
-.contact-form input {
+.error, .contact-form input {
     width: 60%;
 }
 .contact-form textarea {
@@ -530,7 +530,7 @@ ul {
 
 .img-footer{
     font-size: 24px;
-    width: 10%;
+    width: 15%;
     display: flex;
     justify-content: space-between;
 }
@@ -540,13 +540,13 @@ ul {
 }
 
 .title-footer{
-    width: 80%;
+    width: 70%;
     font-size: 22px;
     text-align: center;
 }
 
 .author{
-    width: 10%;
+    width: 15%;
     font-size: 18px;
     text-align: end;
 }

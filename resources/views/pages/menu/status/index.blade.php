@@ -1,8 +1,10 @@
 @extends('layouts.default')
 
-@section('title')Статус закладу@endsection
+@section('title')
+    Статус закладу
+@endsection
 @section('content')
-<h1>Статус закладу</h1>
+    <h1>Статус закладу</h1>
     <div class="hr">
         <div class="orange-hr"></div>
         <div class="silver-hr"></div>
@@ -31,14 +33,14 @@
                 </div>
             </div>
             @if(auth()->user() && auth()->user()->can('admin'))
-            <div class="mt-2">
-                <form action="{{route('status.destroy', $data->id)}}" method="post" style="display:inline-block">
-                    @csrf
-                    @method ('DELETE')
-                    <button type="submit" class="btn btn-danger">Видалити</button>
-                </form>
-                <a href="{{route('status.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
-            </div>
+                <div class="mt-2">
+                    <form action="{{route('status.destroy', $data->id)}}" method="post" style="display:inline-block">
+                        @csrf
+                        @method ('DELETE')
+                        <button type="submit" class="btn btn-danger">Видалити</button>
+                    </form>
+                    <a href="{{route('status.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
+                </div>
             @endif
         </div>
         <hr>

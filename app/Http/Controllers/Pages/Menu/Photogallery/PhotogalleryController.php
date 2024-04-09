@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Pages\Menu\Photogallery;
 
-use App\Http\Requests\Pages\Menu\Photogallery\UpdateRequest;
+use App\Http\Requests\Pages\Menu\Photogallery\StoreRequest;
 use App\Models\Photogallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +14,7 @@ class PhotogalleryController extends BaseController
      */
     public function index()
     {
-        $photos = Photogallery::orderBy('id')->paginate(10);
+        $photos = Photogallery::orderBy('id')->paginate(15);
 
         return view('pages.photogallery.index', compact('photos'));
     }
@@ -30,13 +30,13 @@ class PhotogalleryController extends BaseController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UpdateRequest $request)
+    public function store(StoreRequest $request)
     {
-        $images = $request->file('image');
+        $data = $request->validated();
 
-        $this->service->store($images);
+        $this->service->store($data);
 
-        return redirect()->back()->with('status','Дані додано!');
+        return redirect()->back()->with('status','Фотографію додано!');
     }
 
     /**

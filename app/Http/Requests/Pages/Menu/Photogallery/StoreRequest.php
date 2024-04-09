@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Pages\Menu\News;
+namespace App\Http\Requests\Pages\Menu\Photogallery;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,17 +22,13 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'max:255'],
-            'info' => ['required'],
+            'path' => ['required'],
         ];
     }
-
     public function messages()
     {
         return [
-            'title.required' => 'Це поле обовʼязкове для заповнення',
-            'title.max' => 'Це поле може містити до 255 символів',
-            'info.required' => 'Це поле обовʼязкове для заповнення',
+            'path.required' => 'Це поле обовʼязкове для заповнення',
         ];
     }
 }

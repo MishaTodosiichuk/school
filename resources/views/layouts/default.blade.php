@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut ico n" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -21,18 +21,20 @@
     <title>@yield('title-block')</title>
 </head>
 <body>
-    @include('inc.header')
-    <div class="main">
-        @include('inc.top-nav')
-        <div class="menu-content">
-            @include('inc.side-menu')
-            <div class="page">
-                <div class="page-content">
-                    @yield('content')
-                </div>
+@include('inc.header')
+<div class="main">
+    @include('inc.top-nav')
+    <div class="menu-content">
+        @include('inc.side-menu')
+        <div class="page">
+            <div class="page-content">
+                @yield('content')
             </div>
         </div>
     </div>
-    @include('inc.footer')
+</div>
+@include('inc.footer')
+@stack('css')
+@stack('scripts')
 </body>
 </html>

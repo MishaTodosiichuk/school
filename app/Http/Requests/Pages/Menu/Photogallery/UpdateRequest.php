@@ -22,18 +22,13 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'max:255'],
-            'info' => ['required'],
+            'path' => ['required'],
         ];
     }
     public function messages()
     {
         return [
-            'title.required' => 'Це поле обовʼязкове для заповнення',
-            'title.max:255' => 'Це поле може містити до 255 символів',
-            'info.required' => 'Це поле обовʼязкове для заповнення',
-            'image.required' => 'Це поле обовʼязкове для заповнення',
-            'image.file' => 'Це поле повинне містити файл',
+            'path.required' => 'Це поле обовʼязкове для заповнення',
         ];
     }
 }

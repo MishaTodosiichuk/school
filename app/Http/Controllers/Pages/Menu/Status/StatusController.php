@@ -35,6 +35,7 @@ class StatusController extends BaseController
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
+        
         $this->service->store($data);
 
         return redirect()->back()->with('status', 'Новий пост додано!');
@@ -64,6 +65,7 @@ class StatusController extends BaseController
     public function update(UpdateRequest $request, Status $status)
     {
         $data = $request->validated();
+
         $this->service->update($data, $status);
 
         return redirect()->back()->with('status', 'Оновлення успішне!');

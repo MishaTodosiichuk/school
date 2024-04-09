@@ -21,7 +21,7 @@ Route::get('/', 'App\Http\Controllers\Pages\HomeController')->name('pages.news.i
 
 Route::resource('/photogallery', PhotogalleryController::class);
 
-Route::get('/send', 'App\Http\Controllers\Pages\MailController@send')->name('send');
+Route::get('/send', 'App\Http\Controllers\Pages\MailController')->name('send');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

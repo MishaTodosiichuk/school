@@ -24,7 +24,6 @@ class StoreRequest extends FormRequest
         return [
             'title' => ['required', 'max:255'],
             'info' => ['required'],
-            'image' => ['required','file']
         ];
     }
 
@@ -32,10 +31,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'title.required' => 'Це поле обовʼязкове для заповнення',
-            'title.max:255' => 'Це поле може містити до 255 символів',
+            'title.max' => 'Це поле може містити до 255 символів',
             'info.required' => 'Це поле обовʼязкове для заповнення',
-            'image.required' => 'Це поле обовʼязкове для заповнення',
-            'image.file' => 'Це поле повинне містити файл',
         ];
     }
 }

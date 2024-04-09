@@ -10,13 +10,13 @@
     <form class="form" action="{{route('photogallery.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <input class="form-control" type="file" name="image[]" multiple style="width: 100%;">
-            @error('image')
+            <input class="form-control" type="file" name="path">
+        </div>
+        @error('path')
             <div class="alert alert-danger mt-4">
                 {{ $message }}
             </div>
-            @enderror
-        </div>
+        @enderror
         <button type="submit" class="btn btn-success">Створити</button>
     </form>
 @endsection

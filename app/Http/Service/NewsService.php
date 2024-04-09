@@ -18,8 +18,9 @@ class NewsService
             $status = News::query()->create($data);
             $statusId = $status->id;
 
-            if ($data->hasFile('image')) {
-                foreach ($data->file('image') as $image) {
+
+            if (isset($data)) {
+                foreach ($data->image as $image) {
                     $path = $image->storeAs('news/'. $statusId, $image->getClientOriginalName(), 'public');
                     NewsImage::query()->create([
                         'news_id' => $statusId,
