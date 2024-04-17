@@ -15,15 +15,16 @@ class NewsService
     {
         try {
             DB::beginTransaction();
-            $status = News::query()->create($data);
-            $statusId = $status->id;
+            $news = News::query()->create($data);
 
-
-            if (isset($data)) {
-                foreach ($data->image as $image) {
-                    $path = $image->storeAs('news/'. $statusId, $image->getClientOriginalName(), 'public');
+            $newsId = $news->id;
+            $news['prev_image'] = NewsImage::query()->where('news_id', $newsId)->first();
+            if (isset($data['image'])) {
+                foreach ($data['image'] as $image) {
+                    $path = $image->store();
+                    $path = Storage::disk('public')->put('/images/news/', $path);
                     NewsImage::query()->create([
-                        'news_id' => $statusId,
+                        'news_id' => $newsId,
                         'path' => $path
                     ]);
                 }
