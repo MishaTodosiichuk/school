@@ -256,7 +256,7 @@ ul {
 
 .page-content h1{
     width: auto;
-    margin-left: 5%;
+
 }
 
 .hr{
@@ -368,7 +368,7 @@ ul {
 }
 
 .news-text{
-    width: 60%;
+    width: 100%;
     margin-left: 10px;
     font-size: 14px;
 }
@@ -448,12 +448,12 @@ ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
 }
 
 .news-photo{
     margin: 10px;
-    width: 22%;
+    width: 80%;
 }
 
 .news-photo img{

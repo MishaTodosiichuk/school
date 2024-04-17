@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Pages\Menu\News;
 
 use App\Http\Controllers\Controller;
-use App\Http\Service\NewsService;
+use App\Http\Service\News\NewsPhotoService;
+use App\Http\Service\News\NewsService;
 
 class BaseController extends Controller
 {

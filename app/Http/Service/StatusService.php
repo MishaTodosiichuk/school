@@ -15,19 +15,8 @@ class StatusService
     {
         try {
             DB::beginTransaction();
-            $status = Status::query()->create($data);
-            $statusId = $status->id;
-            //$data['preview_image'] = Storage::put('/images', $data['preview_image']);
+            Status::query()->create($data);
 
-            if (isset($data)) {
-                foreach ($data->file('image') as $image) {
-                    $path = $image->storeAs('status/' . $statusId, $image->getClientOriginalName(), 'public');
-                    Image::query()->create([
-                        'status_id' => $statusId,
-                        'path' => $path
-                    ]);
-                }
-            }
             DB::commit();
         } catch (Exception $exception) {
             DB::rollBack();

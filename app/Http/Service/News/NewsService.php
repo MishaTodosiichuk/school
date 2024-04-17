@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Service;
+namespace App\Http\Service\News;
 
 use App\Models\News;
 use App\Models\NewsImage;
@@ -15,20 +15,7 @@ class NewsService
     {
         try {
             DB::beginTransaction();
-            $news = News::query()->create($data);
-
-            $newsId = $news->id;
-            $news['prev_image'] = NewsImage::query()->where('news_id', $newsId)->first();
-            if (isset($data['image'])) {
-                foreach ($data['image'] as $image) {
-                    $path = $image->store();
-                    $path = Storage::disk('public')->put('/images/news/', $path);
-                    NewsImage::query()->create([
-                        'news_id' => $newsId,
-                        'path' => $path
-                    ]);
-                }
-            }
+            News::query()->create($data);
             DB::commit();
         } catch (Exception $exception){
             DB::rollBack();
@@ -40,21 +27,6 @@ class NewsService
     {
         try {
             DB::beginTransaction();
-            $newsId = $news->id;
-            $images = NewsImage::query()->where('status_id', $news->id)->get();
-            if (isset($images)) {
-                foreach ($images as $image) {
-                    $image->delete();
-                }
-                Storage::disk('public')->deleteDirectory('status/' . $newsId);
-                foreach ($data->file('image') as $image) {
-                    $path = $image->storeAs('news/' . $newsId, $image->getClientOriginalName(), 'public');
-                    NewsImage::query()->create([
-                        'news_id' => $newsId,
-                        'path' => $path
-                    ]);
-                }
-            }
             $news->update($data);
             DB::commit();
         } catch (Exception $exception){
@@ -73,7 +45,7 @@ class NewsService
             foreach ($images as $image){
                 $image->delete();
             }
-            Storage::disk('public')->deleteDirectory('news/' . $news_id);
+            Storage::disk('public')->deleteDirectory('images/news/' . $news_id);
             DB::commit();
         }
         catch (Exception $exception){

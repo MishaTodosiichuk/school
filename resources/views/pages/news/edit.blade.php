@@ -2,6 +2,7 @@
 
 @section('content')
     <a href="{{route('pages.news.index')}}" class="btn btn-warning mb-2">Назад</a>
+{{--    <a href="{{route('news_photo.edit', $news->id)}}" class="btn btn-primary mb-2">Змінити</a>--}}
     @if (session ('status'))
         <div class="alert alert-success mt-2">
             {{session ('status')}}
@@ -20,25 +21,37 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label  class="form-label">Текст</label><br>
-            <input type="text" class="form-control" name="info" value="{{$news->info}}">
+            <label class="form-label">Текст</label><br>
+            <textarea class="summernote" id="info" name="info">{{$news->info}}</textarea>
             @error('info')
             <div class="alert alert-danger mt-4">
                 {{ $message }}
             </div>
             @enderror
         </div>
-        <div class="mb-3">
-            @foreach($newsPhoto as $data)
-                <img class="w-25 mb-3" src="{{ asset('storage/' . $data->path) }}" alt="{{$data->path}}">
-            @endforeach
-            <input class="form-control" type="file" name="image[]" multiple style="width: 100%;">
-            @error('image')
-            <div class="alert alert-danger mt-4">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
+
         <button type="submit" class="btn btn-success">Оновити</button>
     </form>
 @endsection
+@push('css')
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src="{{asset('plugins/summernote/lang/summernote-uk-UA.js')}}"></script>
+    <script>
+        $(document).ready( function () {
+            $("#info ").summernote();
+        });
+        $('#info').summernote({
+            height: 200,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']]
+            ]
+        });
+    </script>
+@endpush

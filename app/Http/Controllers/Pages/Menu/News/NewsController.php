@@ -18,7 +18,7 @@ class NewsController extends BaseController
     {
         $news = News::orderByDesc('id')->paginate(10);
 
-        return view('pages.news.index', compact (['news']));
+        return view('pages.news.index', compact(['news']));
     }
 
     /**
@@ -35,10 +35,9 @@ class NewsController extends BaseController
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
-
         $this->service->store($data);
 
-        return redirect()->back()->with('status','Нову новину додано!');
+        return redirect()->back()->with('status', 'Нову новину додано!');
     }
 
     /**
@@ -48,7 +47,7 @@ class NewsController extends BaseController
     {
         $photos = NewsImage::where('news_id', $news->id)->get();
 
-        return view('pages.news.show', compact('news' , 'photos'));
+        return view('pages.news.show', compact('news', 'photos'));
     }
 
     /**
@@ -56,8 +55,7 @@ class NewsController extends BaseController
      */
     public function edit(News $news)
     {
-        $newsPhoto = NewsImage::query()->where('news_id',$news->id)->get();
-        return view('pages.news.edit', compact (['news', 'newsPhoto']));
+        return view('pages.news.edit', compact(['news']));
     }
 
     /**
@@ -67,7 +65,7 @@ class NewsController extends BaseController
     {
         $data = $request->validated();
         $this->service->update($data, $news);
-        return redirect()->back()->with('status','Оновлення успішне!');
+        return redirect()->back()->with('status', 'Оновлення успішне!');
     }
 
     /**
@@ -77,6 +75,6 @@ class NewsController extends BaseController
     {
         $news->delete();
         $this->service->delete($news);
-        return redirect()->back()->with('status','Новину успішно видалено!');
+        return redirect()->back()->with('status', 'Новину успішно видалено!');
     }
 }

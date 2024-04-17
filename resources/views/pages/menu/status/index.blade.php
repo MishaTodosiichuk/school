@@ -26,7 +26,7 @@
                     <div class="list-title">
                         <a href="{{ route('status.show', $data->id) }}"> <b>{{$data->title}}</b></a>
                     </div>
-                    <p>{{$data->info}}</p>
+                    <p>{!! $data->info !!}</p>
                     <div class="list-date">
                         <p><i>{{$data->updated_at}}</i></p>
                     </div>

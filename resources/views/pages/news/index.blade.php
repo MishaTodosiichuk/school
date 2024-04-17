@@ -31,6 +31,7 @@
         <hr>
         @if(auth()->user() && auth()->user()->can('admin'))
             <a href="{{route('news.create')}}" class="btn btn-success mt-2">Додати нову новину</a>
+            <a href="{{route('news_photo.create')}}" class="btn btn-success mt-2">Додати фотографії для новин</a>
         @endif
         @if (session ('status'))
             <div class="alert alert-success mt-2">
@@ -49,28 +50,30 @@
         <div class="news">
             <div class="news-content">
                 @foreach($news as $data)
-                <div class="news-text">
-                    <div class="news-title">
-                        <a href="{{route('news.show', $data->id)}}"><b>{{$data->title}}</b></a>
+                    <div class="news-text">
+                        <div class="news-title">
+                            <b>{{$data->title}}</b>
+                        </div>
+                        {!! $data->info !!}
+                        <div class="news-date">
+                            <p><i>{{$data->updated_at}}</i></p>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{route('news.show', $data->id)}}" class="btn btn-warning">Детальніше...</a>
+                            @if(auth()->user() && auth()->user()->can('admin'))
+                                <form action="{{route('news.destroy', $data->id)}}" method="post"
+                                      style="display:inline-block">
+                                    @csrf
+                                    @method ('DELETE')
+                                    <button type="submit" class="btn btn-danger">Видалити</button>
+                                </form>
+                                <a href="{{route('news.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
+                        </div>
+                        @endif
+                        <hr>
                     </div>
-                    <p>{{$data->info}}</p>
-                    <div class="news-date">
-                        <p><i>{{$data->updated_at}}</i></p>
-                    </div>
-                    @if(auth()->user() && auth()->user()->can('admin'))
-                    <div class="mt-2">
-                        <form action="{{route('news.destroy', $data->id)}}" method="post" style="display:inline-block">
-                            @csrf
-                            @method ('DELETE')
-                            <button type="submit" class="btn btn-danger">Видалити</button>
-                        </form>
-                        <a href="{{route('news.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
-                    </div>
-                    @endif
-                </div>
                 @endforeach
             </div>
-            <hr>
         </div>
     </div>
     <script src="../js/slider.js"></script>

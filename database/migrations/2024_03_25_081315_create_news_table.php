@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('title');
             $table->text('info');
-            $table->integer('prev_image')->nullable();
+            $table->string('prev_image')->nullable();
             $table->integer('count_views')->default(0);
 
             $table->timestamps();

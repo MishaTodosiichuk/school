@@ -8,31 +8,31 @@
             {{session ('status')}}
         </div>
     @endif
-    <form class="form" action="{{route('news.store')}}" method="post" enctype="multipart/form-data">
+    <form class="form" action="{{route('news_photo.store')}}" method="post" enctype="multipart/form-data">
         @csrf
-        <input type="hidden" name="id">
         <div class="mb-3">
-            <label class="form-label">Заголовок</label><br>
-            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
-            @error('title')
+            <label class="form-label">Виберіть новину до якої хочете додати фотографії</label><br>
+                <select class="form-select" name="news_id">
+                @foreach($news as $data)
+                        <option value="{{$data->id}}">{{$data->title}}</option>
+                @endforeach
+                </select>
+            @error('news_id')
             <div class="alert alert-danger mt-4">
                 {{ $message }}
             </div>
             @enderror
         </div>
         <div class="mb-3">
-            <label for="info" class="form-label"><b>Текст </b><span class="required-field">*</span></label><br>
-            <textarea class="summernote" id="info" name="info">{{ old('info') }}</textarea>
-            @error('info')
+            <div class="mb-3">
+                <input class="form-control" type="file" name="path[]" multiple>
+            </div>
+            @error('path')
             <div class="alert alert-danger mt-4">
                 {{ $message }}
             </div>
             @enderror
         </div>
-        <div class="mb-3">
-            <input class="form-control" type="file" name="image[]" multiple >
-        </div>
-        <input type="hidden" name="prev_image" value="1">
         <button type="submit" class="btn btn-success">Створити</button>
     </form>
 @endsection

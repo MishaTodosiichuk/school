@@ -9,16 +9,17 @@
             <div class="count-views">Кількість переглядів: {{$news->count_views}}</div>
         </div>
         <hr>
-            <div class="news-content">
-                {{$news->info}}
-                <hr>
+        <div class="news-content">
+            {!! $news->info !!}
+            <hr>
             <div class="photos">
                 @foreach($photos as $photo)
                     <div class="news-photo">
-                        <img src="../storage/{{$photo->path}}" alt="" class="mb-3">
+                        <img src="{{url('storage/' . $photo->path)}}" alt="{{$photo->path}}" class="mb-3">
                     </div>
                 @endforeach
             </div>
+
         </div>
     </div>
 @endsection

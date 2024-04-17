@@ -20,17 +20,9 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label  class="form-label">Текст</label><br>
-            <input type="text" class="form-control" name="info" value="{{$status->info}}">
+            <label class="form-label">Текст</label><br>
+            <textarea class="summernote" id="info" name="info">{{ $status->info }}</textarea>
             @error('info')
-            <div class="alert alert-danger mt-4">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-        <div class="mb-3">
-            <input class="form-control" type="file" name="image[]" multiple>
-            @error('image')
             <div class="alert alert-danger mt-4">
                 {{ $message }}
             </div>

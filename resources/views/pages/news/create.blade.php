@@ -8,7 +8,7 @@
             {{session ('status')}}
         </div>
     @endif
-    <form class="form" action="{{route('news.store')}}" method="post" enctype="multipart/form-data">
+    <form class="form" action="{{route('news.store')}}" method="post">
         @csrf
         <input type="hidden" name="id">
         <div class="mb-3">
@@ -21,16 +21,13 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="info" class="form-label"><b>Текст </b><span class="required-field">*</span></label><br>
+            <label class="form-label">Текст</label><br>
             <textarea class="summernote" id="info" name="info">{{ old('info') }}</textarea>
             @error('info')
             <div class="alert alert-danger mt-4">
                 {{ $message }}
             </div>
             @enderror
-        </div>
-        <div class="mb-3">
-            <input class="form-control" type="file" name="image[]" multiple >
         </div>
         <button type="submit" class="btn btn-success">Створити</button>
     </form>
@@ -40,8 +37,6 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <script src="{{asset('plugins/summernote/lang/summernote-uk-UA.js')}}"></script>
-
-
     <script>
         $(document).ready( function () {
             $("#info ").summernote();

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Pages\Menu\News;
+namespace App\Http\Requests\Pages\Menu\News\News_photo;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,18 +22,17 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'max:255'],
-            'info' => ['required'],
-            'prev_image' => ['string'],
+            'news_id' => ['required', 'integer', 'exists:news,id'],
+            'path' => ['required'],
         ];
     }
 
     public function messages()
     {
         return [
-            'title.required' => 'Це поле обовʼязкове для заповнення',
-            'title.max' => 'Це поле може містити до 255 символів',
-            'info.required' => 'Це поле обовʼязкове для заповнення',
+            'news_id.required' => 'Це поле обовʼязкове для заповнення',
+            'news_id.exists' => 'Це поле повинне бути у базі даних',
+            'path.required' => 'Це поле обовʼязкове для заповнення',
         ];
     }
 }
