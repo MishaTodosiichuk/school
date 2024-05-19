@@ -17,6 +17,11 @@ class News extends Model
     ];
     public function images()
     {
-        return $this->hasMany('App\NewsImage');
+        return $this->hasMany('App\Image');
+    }
+
+    public function files()
+    {
+        return $this->hasMany('App\File');
     }
 }

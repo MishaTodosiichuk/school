@@ -23,7 +23,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'news_id' => ['required', 'integer', 'exists:news,id'],
-            'path' => ['required'],
+            'news_images'=> ['nullable'],
+            'news_files' => ['nullable'],
         ];
     }
 
@@ -31,8 +32,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'news_id.required' => 'Це поле обовʼязкове для заповнення',
+            'news_id.integer' => 'Це поле повинно бути числом',
             'news_id.exists' => 'Це поле повинне бути у базі даних',
-            'path.required' => 'Це поле обовʼязкове для заповнення',
         ];
     }
 }

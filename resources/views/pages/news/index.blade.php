@@ -2,22 +2,8 @@
 
 @section('content')
     <div class="home">
-        <div id="slider-container">
-            <div id="slides">
-                <div class="slide">
-                    <img src="../img/header.jpeg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="../img/news/news.jpeg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="../img/header.jpeg" alt="">
-                </div>
-            </div>
-            <div class="prev" onclick="prevSlide()">‹</div>
-            <div class="next" onclick="nextSlide()">›</div>
-        </div>
-        <div class="title">
+        @include('components.slider')
+        <div class="title-text">
             <b>Вітаємо Вас на офіційному сайті Васловівського ЗЗСО!</b>
         </div>
         <div class="hr">
@@ -25,37 +11,27 @@
             <div class="silver-hr"></div>
         </div>
         <br>
-        <div class="title-news">
+        <div class="main_title">
             <b>Новини нашої школи:</b>
         </div>
         <hr>
         @if(auth()->user() && auth()->user()->can('admin'))
-            <a href="{{route('news.create')}}" class="btn btn-success mt-2">Додати нову новину</a>
-            <a href="{{route('news_photo.create')}}" class="btn btn-success mt-2">Додати фотографії для новин</a>
+            <a href="{{route('news.create')}}" class="btn btn-success mt-2">Додати пост</a>
+            @if($news->isNotEmpty())
+                <a href="{{route('news_photo.create')}}" class="btn btn-success mt-2">Додати файли до поста</a>
+            @endif
         @endif
-        @if (session ('status'))
-            <div class="alert alert-success mt-2">
-                {{session ('status')}}
-            </div>
-        @endif
-        @if ($errors->any())
-            <div class="alert alert-danger mt-4">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{$error}}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        <div class="news">
-            <div class="news-content">
+        @include('components.status')
+        @include('components.errors')
+        <div class="section">
+            <div class="content">
                 @foreach($news as $data)
-                    <div class="news-text">
-                        <div class="news-title">
+                    <div class="text">
+                        <div class="title">
                             <b>{{$data->title}}</b>
                         </div>
                         {!! $data->info !!}
-                        <div class="news-date">
+                        <div class="date">
                             <p><i>{{$data->updated_at}}</i></p>
                         </div>
                         <div class="mt-2">
@@ -70,8 +46,8 @@
                                 <a href="{{route('news.edit', $data->id)}}" class="btn btn-primary">Змінити</a>
                         </div>
                         @endif
-                        <hr>
                     </div>
+                    <hr>
                 @endforeach
             </div>
         </div>

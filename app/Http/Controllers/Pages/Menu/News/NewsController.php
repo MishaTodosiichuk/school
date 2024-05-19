@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pages\Menu\News\StoreRequest;
 use App\Http\Requests\Pages\Menu\News\UpdateRequest;
 use App\Models\News;
-use App\Models\NewsImage;
+use App\Models\Image;
+use App\Models\File;
 use Illuminate\Support\Facades\Storage;
 
 class NewsController extends BaseController
@@ -45,9 +46,12 @@ class NewsController extends BaseController
      */
     public function show(News $news)
     {
-        $photos = NewsImage::where('news_id', $news->id)->get();
 
-        return view('pages.news.show', compact('news', 'photos'));
+        $photos = Image::where('news_id', $news->id)->get();
+        $files = File::where('news_id', $news->id)->get();
+
+
+        return view('pages.news.show', compact('news', 'photos', 'files'));
     }
 
     /**

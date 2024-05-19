@@ -8,10 +8,10 @@
             {{session ('status')}}
         </div>
     @endif
-    <form class="form" action="{{route('news_photo.store')}}" method="post" enctype="multipart/form-data">
+    <form class="form" action="{{route('test')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label class="form-label">Виберіть новину до якої хочете додати фотографії</label><br>
+            <label class="form-label">Виберіть новину до якої будуть додані наступні файл/и</label><br>
                 <select class="form-select" name="news_id">
                 @foreach($news as $data)
                         <option value="{{$data->id}}">{{$data->title}}</option>
@@ -24,10 +24,23 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label class="form-label">Виберіть фотографію / ї</label><br>
             <div class="mb-3">
-                <input class="form-control" type="file" name="path[]" multiple>
+                <input class="form-control" type="file" name="news_images[]" multiple>
             </div>
-            @error('path')
+            @error('images')
+            <div class="alert alert-danger mt-4">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <hr>
+        <div class="mb-3">
+            <label class="form-label">Виберіть файл / и</label><br>
+            <div class="mb-3">
+                <input class="form-control" type="file" name="news_files[]" multiple>
+            </div>
+            @error('files')
             <div class="alert alert-danger mt-4">
                 {{ $message }}
             </div>

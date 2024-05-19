@@ -31,15 +31,22 @@ ul {
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2);
 }
 
-.header-logo {
-    margin-left: 8%;
-    width: auto;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+.header img{
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    height: auto;
+}
+
+.header-logo-left {
+    margin-left: 90px;
+
+}
+
+.header-logo-right {
+    margin-right: 90px;
 }
 
 .header-text {
     width: 88%;
-    margin-right: 8%;
     font-size: 50px;
     text-align: center;
     color: #244d94;
@@ -224,12 +231,10 @@ ul {
     transition: color 0.3s ease;
 }
 
-.btn-cabinet{
+.btn-outline-info{
     font-size: 14px;
     width: 70%;
     margin-left: 15%;
-    background-color: rgb(214,235,240);
-    border: 1px solid #66d8f5;
 }
 /*banner-section*/
 .banner_block{
@@ -249,9 +254,7 @@ ul {
 }
 
 .page-content{
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 10px 20px 20px 20px;
 }
 
 .page-content h1{
@@ -327,24 +330,24 @@ ul {
     right: 10px;
 }
 
-.home .title, .title-news{
+.home .title-text, .main_title{
     margin-top: 15px;
 }
 
-.home .title{
+.home .title-text{
     font-size: 30px;
 }
 
-.home .title-news{
+.home .main_title{
     font-size: 20px;
 }
 
-.news{
+.section{
     width: 100%;
 }
 
-.news-block{
-    padding-bottom: 10px;
+.block{
+
 }
 
 .news-img{
@@ -354,27 +357,38 @@ ul {
     width: 100%;
 }
 
-.news-content{
+.content{
     margin-top: 15px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
 
-.news-title{
+.title{
     margin-left: 15px;
     font-size: 20px;
     color: #2c86ee;
 }
 
-.news-text{
+.text{
     width: 100%;
     margin-left: 10px;
     font-size: 14px;
 }
 
-.news-date .list-date{
+.date {
     color: silver;
+}
+
+.date-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    margin-bottom: -20px;
+    color: #a4a4a4;
+    font-weight: bold;
 }
 
 /*photogallery*/
@@ -397,7 +411,7 @@ ul {
     width: 180px;
 }
 
-.photo .title{
+.photo .title-text{
     font-size: 16px;
     margin-left: 5px;
 }
@@ -432,11 +446,11 @@ ul {
 
 /*news*/
 
-.title-news{
+.main_title{
     font-size: 30px;
 
 }
-.news-top{
+.top{
     display: flex;
 }
 
@@ -444,11 +458,16 @@ ul {
     margin-left: 50px;
 }
 
-.photos{
+.photos, .files{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.files_h2{
+    margin-top: 10px;
+    width: 100%;
 }
 
 .news-photo{

@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\Pages\ContactController;
 use App\Http\Controllers\Pages\Menu\Photogallery\PhotogalleryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\Test;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +30,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::post('test/store', [Test::class, 'store'])->name('test');
+
+Route::get('/download/{filename}', [FileController::class, 'download'])->name('file.download');
 
 //admin
 Route::resource('/roles', RoleController::class)->middleware('can: show role');

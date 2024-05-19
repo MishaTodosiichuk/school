@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Pages\Menu\News\NewsPhoto;
 
 use App\Http\Requests\Pages\Menu\News\News_photo\StoreRequest;
+use App\Models\Image;
 use App\Models\News;
-use App\Models\NewsImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class NewsPhotoController extends BaseController
@@ -35,7 +36,7 @@ class NewsPhotoController extends BaseController
     {
         $news_photo = $request->validated();
         $this->service->store($news_photo);
-        return redirect()->back()->with('status','Фотографії для новини додано!');
+        return redirect()->back()->with('status','Файл/и для новини додано!');
     }
 
     /**
@@ -64,10 +65,10 @@ class NewsPhotoController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(NewsImage $photos)
+    public function destroy(Image $photos)
     {
         Storage::disk('public')->delete($photos->path);
         $photos->delete();
-        return redirect()->back()->with('status','Фото успішно видалено!');
+        return redirect()->back()->with('status','Файл успішно видалено!');
     }
 }

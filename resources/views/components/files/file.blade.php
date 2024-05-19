@@ -8,4 +8,5 @@
                 download>{{ basename($file->path) }}</a>
         </div>
     @endforeach
+    <div class="silver-hr"></div>
 </div>

@@ -1,25 +1,22 @@
 @extends('layouts.default')
 
 @section('content')
-    <div class="news-block">
+    <div class="block">
         <h1>{{$news->title}}</h1>
-        <hr>
-        <div class="news-top">
-            <div class="news-date">Дата: {{$news->updated_at}}</div>
-            <div class="count-views">Кількість переглядів: {{$news->count_views}}</div>
+        <div class="silver-hr"></div>
+        <div class="top">
+            <div class="date-content">Дата публікації - {{$news->created_at}}</div>
+            {{--<div class="count-views">Кількість переглядів: {{$news->count_views}}</div>--}}
         </div>
-        <hr>
-        <div class="news-content">
+        <div class="silver-hr"></div>
+        <div class="content">
             {!! $news->info !!}
-            <hr>
-            <div class="photos">
-                @foreach($photos as $photo)
-                    <div class="news-photo">
-                        <img src="{{url('storage/' . $photo->path)}}" alt="{{$photo->path}}" class="mb-3">
-                    </div>
-                @endforeach
-            </div>
-
+            @if($photos->isNotEmpty())
+                @include('components.files.image', $photos)
+            @endif
+            @if($files->isNotEmpty())
+                @include('components.files.file', $files)
+            @endif
         </div>
     </div>
 @endsection
